@@ -1,3 +1,10 @@
+/* Project:  Lab2 
+ * Class: CUS1156 Software Design Methods.java
+ * *Author: Oluwatosin Alao
+ * * Date:February 28, 2021
+ * This program counts the number of distinct elements in an ArrayList 
+ * */ 
+
 import java.util.ArrayList;
 
 public class UniqueWords
@@ -11,11 +18,18 @@ public class UniqueWords
    {
 	  int count = 0;
 	  
-      for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
+      for (int i = 0; i < list.size(); i++) {
+    	  boolean unique = true;
+    	  for (int j = 0; j < list.size(); j++) {
+    		  if (list.get(i) == list.get(j)) {
+    			  unique = true;
+    			  if(i!=j) {
+    				  unique = false;
+    			  }
+    		  }
 		 }
+    	  if (unique)
+    		  count++;
       }
 	  return count;
    }
